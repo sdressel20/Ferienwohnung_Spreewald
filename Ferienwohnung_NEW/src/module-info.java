@@ -1,0 +1,2 @@
+module Ferienwohnung_NEW {
+}
