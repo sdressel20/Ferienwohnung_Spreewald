@@ -80,7 +80,7 @@ public class Ferienwohnung {
     }
 	
 	// Methode buche Ferienwohnung
-    //Test und Test1
+    //Test neu
 		
 	
 }
