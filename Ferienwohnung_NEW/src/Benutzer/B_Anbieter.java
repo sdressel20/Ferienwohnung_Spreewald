@@ -5,59 +5,70 @@ import java.util.Scanner;
 import Ferienwohnung.Ferienwohnung;
 
 public class B_Anbieter extends Benutzer {
-    // Attribute
+	// Attribute
 
+	// Konstruktor
 
-    // Konstruktor
-    
 	public B_Anbieter() {
 		super();
+		setGast(false);
 		// TODO Auto-generated constructor stub
 	}
 
 	public B_Anbieter(String benutzer, String passwort, String vorname, String nachname) {
 		super(benutzer, passwort, vorname, nachname);
+		setGast(false);
 		// TODO Auto-generated constructor stub
 	}
-    
-    // Methoden
 
-    
+	// Methoden
+	public void zeigeDaten() {
 
-    // Methode erstelle Ferienwohnung
+		System.out.println("***Benutzerdaten***");
+		System.out.println("(1) Benutzername: " + getBenutzer());
+		System.out.println("(2) Vorname: " + getVorname());
+		System.out.println("(3) Nachname: " + getNachname());
+		System.out.println();
 
-    public Ferienwohnung erstelleFerienwohnung() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Eingabe der Größe in qm:");
-        int groesse = scan.nextInt();
-
-        System.out.println("Eingabe Adresse:");
-        String adresse = scan.next();
-
-        System.out.println("Eingabe Preis/Tag:");
-        int preis = scan.nextInt();
-
-        System.out.println("Eingabe Anzahl PAX:");
-        int pax = scan.nextInt();
-
-        int wohnungsID = Ferienwohnung.anzahl_Ferienwohnungen;
-        Ferienwohnung.anzahl_Ferienwohnungen++;
-
-        Ferienwohnung myF = new Ferienwohnung(groesse, preis, pax, wohnungsID, adresse);
-        System.out.println("Die folgende Ferienwohnung wurde erstellt: " + myF.toString());
-
-        return myF;
-    }
-
-	
-
-	@Override
-	public Benutzer erstelleBenutzer() {
-		// TODO Auto-generated method stub
-		return super.erstelleBenutzer();
 	}
-    
-    // Methode LogIn Anbieter
-    
-    
+
+	// Methode ändere Daten
+	public void ändereDaten() {
+		zeigeDaten();
+		System.out.println("Bitte eine der oben aufgeführten Zahlen ein um die entsprechende Information anzupassen");
+		Scanner scan = new Scanner(System.in);
+		int eingabe = scan.nextInt();
+		switch (eingabe) {
+		case 1: {
+			System.out.println("Benutzername aktuell: " + getBenutzer());
+			System.out.println("Eingabe neuer Benutzername:");
+			String benutzerString = scan.next();
+			setBenutzer(benutzerString);
+			break;
+		}
+		case 2: {
+			System.out.println("Vorname aktuell: " + getVorname());
+			System.out.println("Eingabe neuer Vorname:");
+			String vornameString = scan.next();
+			setVorname(vornameString);
+			break;
+		}
+
+		case 3: {
+			System.out.println("Nachname aktuell: " + getNachname());
+			System.out.println("Eingabe neuer Nachname");
+			String nachnameString = scan.next();
+			setNachname(nachnameString);
+			break;
+
+		}
+
+		default:
+			throw new IllegalArgumentException("Falsche Eingabe, bitte versuchen Sie es erneut");
+		}
+
+	}
+
+	// Methode LogIn Anbieter
+
 }

@@ -1,4 +1,4 @@
-package Programm;
+package Datenbank;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 import Benutzer.Benutzer;
 
-public class Datenbank {
+public class DatenbankBenutzer {
 
 	// Attribute
 
@@ -15,7 +15,7 @@ public class Datenbank {
 	
 	// Konstruktor
 	
-	public Datenbank(HashMap<String, Benutzer> db) {
+	public DatenbankBenutzer(HashMap<String, Benutzer> db) {
 		this.myDatenbank = db;
 		
 	}
@@ -26,9 +26,8 @@ public class Datenbank {
 		myDatenbank.put(passwort, newB);
 
 	}
-
 	public String searchPasswort(String benutzer) {
-		String passwortString = Datenbank.getSingleKeyFromValue(myDatenbank, benutzer);
+		String passwortString = DatenbankBenutzer.getSingleKeyFromValue(myDatenbank, benutzer);
 		return passwortString;
 	}
 

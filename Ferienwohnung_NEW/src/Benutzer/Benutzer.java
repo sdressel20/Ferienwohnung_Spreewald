@@ -6,10 +6,12 @@ public class Benutzer {
 
 	// Attribute
 
+	
 	private String benutzer;
 	private String passwort;
 	private String vorname;
 	private String nachname;
+	private boolean isGast;
 
 	// Konstruktor
 
@@ -59,8 +61,17 @@ public class Benutzer {
 		this.vorname = vorname;
 	}
 
-	// Methode Benutzer erstellen
 
+	public boolean getIsGast() {
+		return this.isGast;
+	}
+
+	public void setGast(boolean isGast) {
+		this.isGast = isGast;
+	}
+
+	// Methode Benutzer erstellen
+	
 	public Benutzer erstelleBenutzer() {
 
 		Scanner scan = new Scanner(System.in);
